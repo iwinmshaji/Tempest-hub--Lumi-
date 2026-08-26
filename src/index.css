@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b12;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: #11111c;
+  border-bottom: 1px solid #29293a;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header nav a {
+  padding: 10px 16px;
+  color: #b8b8c7;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.header nav a:hover {
+  color: white;
+  background: #20202d;
+}
+
+.header nav a.active {
+  color: white;
+  background: #6c3cff;
+}
+
+.hero {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(
+    135deg,
+    #10101a,
+    #17132b
+  );
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-label {
+  color: #8c6cff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  margin: 15px 0;
+  font-size: 52px;
+  line-height: 1.1;
+}
+
+.hero p {
+  max-width: 500px;
+  color: #b8b8c7;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero button {
+  margin-top: 15px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  background: #6c3cff;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background: #5930d6;
+}
+
+
+/* card...............................*/
+
+.games-page {
+  padding: 40px;
+}
+
+.games-header h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.games-header p {
+  color: #aaaabb;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.game-card {
+  background: #151521;
+  border: 1px solid #29293a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.game-image {
+  height: 180px;
+  background: #252536;
+}
+
+.game-info {
+  padding: 18px;
+}
+
+.game-info h3 {
+  margin: 0 0 8px;
+}
+
+.game-info p {
+  margin: 0 0 10px;
+  color: #aaaabb;
+}
+
+.game-info span {
+  color: #ffd45c;
+}
+
+/* game cards */
+
+.game-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
