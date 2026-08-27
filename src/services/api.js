@@ -1,6 +1,6 @@
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 const API_URL = "https://api.rawg.io/api";
-const LOCAL_API_URL = "http://localhost:3000";
+const LOCAL_API_URL = "https://tempest-hub-api.onrender.com";
 
 export const getGames = async () => {
   const response = await fetch(
