@@ -1,6 +1,15 @@
 const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
+
+
 const API_URL = "https://api.rawg.io/api";
+
+
 const LOCAL_API_URL = "https://tempest-hub-api.onrender.com";
+
+
+
+
+
 
 export const getGames = async () => {
   const response = await fetch(
@@ -16,6 +25,10 @@ export const getGames = async () => {
   return data.results;
 };
 
+
+
+
+
 export const getGameById = async (id) => {
   const response = await fetch(
     `${API_URL}/games/${id}?key=${API_KEY}`
@@ -27,6 +40,9 @@ export const getGameById = async (id) => {
 
   return response.json();
 };
+
+
+
 
 export const getLocalGames = async () => {
   const response = await fetch(
@@ -71,6 +87,9 @@ export const addGame = async (game) => {
   return response.json();
 };
 
+
+
+
 export const updateGame = async (id, game) => {
   const response = await fetch(
     `${LOCAL_API_URL}/games/${id}`,
@@ -98,6 +117,10 @@ export const deleteGame = async (id) => {
     }
   );
 
+
+
+
+  
   if (!response.ok) {
     throw new Error("Failed to delete game");
   }

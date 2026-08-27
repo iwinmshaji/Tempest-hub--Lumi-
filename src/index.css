@@ -2,12 +2,20 @@
   box-sizing: border-box;
 }
 
+
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0b0b12;
   color: white;
 }
+
+
+
+
 
 a {
   text-decoration: none;
@@ -17,6 +25,10 @@ a {
 .app {
   min-height: 100vh;
 }
+
+
+
+
 
 .header {
   height: 70px;
@@ -32,6 +44,9 @@ a {
   font-size: 25px;
   font-weight: bold;
 }
+
+
+
 
 .header nav {
   display: flex;
@@ -52,34 +67,61 @@ main {
 }
 
 .home-page {
+  width: 100%;
   min-height: calc(100vh - 70px);
 }
 
 .hero {
-  min-height: 500px;
-  padding: 100px 30px;
-  text-align: center;
+  position: relative;
+  height: 650px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    #11111c,
-    #1d1d2b
-  );
 }
 
-.hero h1 {
-  font-size: 55px;
-  margin-bottom: 15px;
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.hero p {
-  font-size: 19px;
-  color: #bdbdc8;
-  margin-bottom: 30px;
+
+
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 15, 0.65);
+  z-index: 1;
 }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 35px;
+  color: #d8d8e5;
+}
+
+
+
 
 .hero-button,
 .add-game-button {
@@ -91,23 +133,47 @@ main {
   font-weight: bold;
 }
 
+.hero-button {
+  padding: 16px 28px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: #7c3cff;
+  color: white;
+}
+
 .home-features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 50px;
+  gap: 30px;
+  padding: 60px;
+  background: #08080f;
 }
 
-.home-features div {
-  padding: 30px;
-  background: #151520;
-  border-radius: 10px;
-  border: 1px solid #292936;
+
+
+
+.feature-card {
+  padding: 35px;
+  background: #14141f;
+  border: 1px solid #292938;
+  border-radius: 12px;
 }
 
-.home-features p {
-  color: #aaaaaa;
+.feature-card h2 {
+  margin-bottom: 20px;
+  color: white;
 }
+
+.feature-card p {
+  color: #b9b9c9;
+  line-height: 1.6;
+}
+
+
+
 
 .games-page {
   padding: 40px 50px;
@@ -125,6 +191,9 @@ main {
 .games-header p {
   color: #aaaaaa;
 }
+
+
+
 
 .add-game-button {
   margin-top: 15px;
@@ -159,6 +228,9 @@ main {
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
+
+
+
 
 .game-card {
   position: relative;
@@ -216,7 +288,6 @@ main {
   gap: 10px;
   margin-top: 10px;
 }
-
 .game-actions a,
 .game-actions button,
 .favorite-item > button {
@@ -231,13 +302,8 @@ main {
   color: black;
 }
 
-.game-actions button {
-  background: #b83232;
-  color: white;
-}
-
+.game-actions button,
 .favorite-item > button {
-  margin-top: 10px;
   background: #b83232;
   color: white;
 }
@@ -286,6 +352,14 @@ main {
   line-height: 1.7;
 }
 
+
+
+
+
+
+
+
+
 .form-page {
   max-width: 600px;
   margin: 50px auto;
@@ -325,12 +399,25 @@ main {
   font-weight: bold;
 }
 
+
+
+
+
+
+
+
+
 .empty-favorites {
   padding: 50px;
   text-align: center;
   background: #151520;
   border-radius: 10px;
+
 }
+
+
+
+ 
 
 @media (max-width: 1000px) {
   .games-grid {
@@ -339,6 +426,17 @@ main {
 
   .home-features {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 46px;
+  }
+
+  .home-features {
+    grid-template-columns: 1fr;
+    padding: 30px;
   }
 }
 
@@ -368,10 +466,29 @@ main {
     width: 100%;
   }
 
-  .hero h1 {
+  .hero-content h1 {
     font-size: 38px;
   }
 }
+
+
+
+@media (max-width: 600px) {
+  .hero {
+    height: 550px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+
+
 
 @media (max-width: 500px) {
   .games-grid {

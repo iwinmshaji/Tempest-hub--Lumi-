@@ -3,11 +3,21 @@ import { Link } from "react-router-dom";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 import FilterDropdown from "../components/FilterDropdown";
+
+
+
+
 import {
+
+
   getGames,
   getLocalGames,
   deleteGame
 } from "../services/api";
+
+
+
+
 
 function Games() {
   const [games, setGames] = useState([]);
@@ -22,6 +32,12 @@ function Games() {
 
     return saved ? JSON.parse(saved) : [];
   });
+
+
+
+
+
+
 
   const loadGames = async () => {
     try {
@@ -40,6 +56,11 @@ function Games() {
     }
   };
 
+
+
+
+
+
   useEffect(() => {
     loadGames();
   }, []);
@@ -49,12 +70,20 @@ function Games() {
       (favorite) => favorite.id === game.id
     );
 
+
+
+
+
     let updatedFavorites;
 
     if (exists) {
       updatedFavorites = favorites.filter(
         (favorite) => favorite.id !== game.id
       );
+
+
+
+
     } else {
       updatedFavorites = [
         ...favorites,
@@ -69,6 +98,11 @@ function Games() {
       JSON.stringify(updatedFavorites)
     );
   };
+
+
+
+
+
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
@@ -224,5 +258,4 @@ function Games() {
     </div>
   );
 }
-
 export default Games;

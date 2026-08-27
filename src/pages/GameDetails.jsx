@@ -5,6 +5,12 @@ import {
   getLocalGameById
 } from "../services/api";
 
+
+
+
+
+
+
 function GameDetails() {
   const { id } = useParams();
 
@@ -35,6 +41,11 @@ function GameDetails() {
       }
     };
 
+
+
+
+
+
     loadGame();
   }, [id]);
 
@@ -45,6 +56,10 @@ function GameDetails() {
       </div>
     );
   }
+
+
+
+
 
   if (error) {
     return (
@@ -58,6 +73,10 @@ function GameDetails() {
     );
   }
 
+
+
+
+
   return (
     <div className="game-details-page">
 
@@ -67,6 +86,13 @@ function GameDetails() {
       >
         ← Back to Games
       </Link>
+
+
+
+
+
+
+
 
       <div className="game-details">
 
@@ -86,6 +112,11 @@ function GameDetails() {
             ⭐ {game.rating}
           </p>
 
+
+
+
+
+
           <p>
             <strong>Genre:</strong>{" "}
             {game.genre ||
@@ -100,6 +131,11 @@ function GameDetails() {
           </p>
 
           <p>
+
+
+
+
+
             <strong>Platforms:</strong>{" "}
             {game.platforms
               ?.map((item) => item.platform.name)
@@ -107,10 +143,16 @@ function GameDetails() {
               "Not available"}
           </p>
 
+
+
+
+
           <p className="description">
             {game.description_raw ||
               "No description available for this game."}
           </p>
+
+
 
         </div>
 
@@ -118,6 +160,8 @@ function GameDetails() {
 
     </div>
   );
-}
 
+
+  
+}
 export default GameDetails;

@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import GameCard from "../components/GameCard";
 
+
+
+
+
+
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
+  useEffec
+  
+  
+  (() => {
     const saved = localStorage.getItem("favorites");
 
     if (saved) {
@@ -24,6 +32,12 @@ function Favorites() {
       JSON.stringify(updatedFavorites)
     );
   };
+
+
+
+
+
+
 
   return (
     <div className="games-page">
@@ -52,6 +66,9 @@ function Favorites() {
           </p>
 
         </div>
+
+
+
       ) : (
         <div className="games-grid">
 
@@ -77,8 +94,10 @@ function Favorites() {
         </div>
       )}
 
+
+
+
     </div>
   );
 }
-
 export default Favorites;

@@ -4,14 +4,22 @@ import {
   Route
 } from "react-router-dom";
 
+
+
+
+
 import Header from "./components/Header";
 
 import Home from "./pages/Home";
+
 import Games from "./pages/Games";
 import GameDetails from "./pages/GameDetails";
 import Favorites from "./pages/Favorites";
+
 import AddGame from "./pages/AddGame";
+
 import EditGame from "./pages/EditGame";
+
 
 function App() {
   return (
@@ -53,6 +61,10 @@ function App() {
               element={<EditGame />}
             />
 
+
+
+
+
           </Routes>
         </main>
 
@@ -60,5 +72,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

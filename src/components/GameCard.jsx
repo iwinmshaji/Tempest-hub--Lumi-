@@ -1,33 +1,33 @@
 import { Link } from "react-router-dom";
 
+
 function GameCard({ game, onFavorite, isFavorite }) {
+
   return (
     <div className="game-card">
-
-      <Link to={`/games/${game.id}`}>
+     <Link to={`/games/${game.id}`}>
 
         <img
           src={game.background_image}
           alt={game.name}
-        />
+           />
 
-        <div className="game-info">
+                <div className="game-info">
 
-          <h3>{game.name}</h3>
+       <h3>{game.name}</h3>
 
-          <p>
-            {game.genres
+ <p>
+       {game.genres
               ?.map((genre) => genre.name)
               .join(", ") || game.genre}
-          </p>
+</p>
 
-          <span>
-            ⭐ {game.rating}
-          </span>
+ <span>
+        ⭐ {game.rating}
+</span>
 
         </div>
-
-      </Link>
+ </Link>
 
       {onFavorite && (
         <button
@@ -35,10 +35,16 @@ function GameCard({ game, onFavorite, isFavorite }) {
         >
           {isFavorite ? "❤️" : "🤍"}
         </button>
+
       )}
+
+
 
     </div>
   );
 }
+
+
+
 
 export default GameCard;

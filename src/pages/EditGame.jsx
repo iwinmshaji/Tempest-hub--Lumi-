@@ -4,10 +4,16 @@ import {
   getLocalGameById,
   updateGame
 } from "../services/api";
+  
+
+
 
 function EditGame() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+
+
 
   const [game, setGame] = useState({
     name: "",
@@ -17,8 +23,14 @@ function EditGame() {
     released: ""
   });
 
+
+
+
+
+
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
+
 
   useEffect(() => {
     const loadGame = async () => {
@@ -38,6 +50,11 @@ function EditGame() {
         setLoading(false);
       }
     };
+    
+
+
+
+
 
     loadGame();
   }, [id]);
@@ -48,6 +65,11 @@ function EditGame() {
       [e.target.name]: e.target.value
     });
   };
+
+
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,6 +87,10 @@ function EditGame() {
     }
   };
 
+
+
+
+
   if (loading) {
     return (
       <div className="form-page">
@@ -73,12 +99,25 @@ function EditGame() {
     );
   }
 
+
+
+
+
+
   return (
     <div className="form-page">
 
       <h2>Edit Game</h2>
 
+
+
+
+
       <form onSubmit={handleSubmit}>
+
+
+
+
 
         <input
           type="text"
@@ -89,6 +128,10 @@ function EditGame() {
           required
         />
 
+
+
+
+
         <input
           type="text"
           name="background_image"
@@ -97,6 +140,10 @@ function EditGame() {
           onChange={handleChange}
           required
         />
+
+
+
+
 
         <input
           type="number"
@@ -109,6 +156,11 @@ function EditGame() {
           step="0.1"
         />
 
+
+
+
+
+
         <input
           type="text"
           name="genre"
@@ -117,6 +169,11 @@ function EditGame() {
           onChange={handleChange}
         />
 
+
+
+
+
+
         <input
           type="date"
           name="released"
@@ -124,11 +181,20 @@ function EditGame() {
           onChange={handleChange}
         />
 
+
+
+
+
+
         <button type="submit">
           Update Game
         </button>
 
       </form>
+
+
+
+
 
       {message && (
         <p>
@@ -137,7 +203,10 @@ function EditGame() {
       )}
 
     </div>
+
+
+
+
   );
 }
-
 export default EditGame;
