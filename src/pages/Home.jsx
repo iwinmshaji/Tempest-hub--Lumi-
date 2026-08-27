@@ -1,23 +1,54 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <span className="hero-label">GAME DISCOVERY</span>
+    <div className="home-page">
 
-        <h2>
-          Discover Your Next
-          <br />
-          Favorite Game
-        </h2>
+      <section className="hero">
+
+        <h1>
+          Welcome to TempestHub
+        </h1>
 
         <p>
-          Explore games, discover new worlds,
-          and find something you want to play.
+          Discover, search and save your favorite games.
         </p>
 
-        <button>Browse Games</button>
-      </div>
-    </section>
+        <Link
+          to="/games"
+          className="hero-button"
+        >
+          Explore Games
+        </Link>
+
+      </section>
+
+      <section className="home-features">
+
+        <div>
+          <h3>Discover Games</h3>
+          <p>
+            Browse games using the RAWG API.
+          </p>
+        </div>
+
+        <div>
+          <h3>Search & Filter</h3>
+          <p>
+            Quickly find games by name or genre.
+          </p>
+        </div>
+
+        <div>
+          <h3>Save Favorites</h3>
+          <p>
+            Save your favorite games for later.
+          </p>
+        </div>
+
+      </section>
+
+    </div>
   );
 }
 
