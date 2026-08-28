@@ -97,7 +97,7 @@ main {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5, 5, 15, 0.65);
+  background: rgba(5, 5, 15, 0.30);
   z-index: 1;
 }
 
